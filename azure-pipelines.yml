@@ -9,6 +9,12 @@ trigger:
 pool:
   vmImage: 'Ubuntu 16.04'
 
+variables:
+- name: 'arg1'
+  value: 'Machine Learning'
+- name: 'arg2'
+  value: 'Rocks!'
+
 steps:
 - task: UsePythonVersion@0
   displayName: 'Use Python 3.6'
