@@ -23,7 +23,7 @@ steps:
     pathFilter: 'notebooks/*.ipynb'
     condaDependencies: 'scripts/reco_full.yaml'
     commonFiles: 'notebooks/reco_utils'
-    dockerBaseImage: 'mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda9.0-cudnn7-ubuntu16.04''
+    dockerBaseImage: 'mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda9.0-cudnn7-ubuntu16.04'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: devops-for-ai'
