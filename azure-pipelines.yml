@@ -15,7 +15,7 @@ steps:
   inputs:
     versionSpec: 3.6
 
-- task: d9bb92c8-57b5-4fa4-b400-280d87655831@0
+- task: RunNotebook@0
   inputs:
     azureSubscription: 'emcmanu_test'
     targetType: 'custom'
