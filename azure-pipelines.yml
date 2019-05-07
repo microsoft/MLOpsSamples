@@ -1,7 +1,4 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Validate notebooks in repo
 
 trigger:
 - master
@@ -20,7 +17,7 @@ steps:
     azureSubscription: 'emcmanu_test'
     targetType: 'custom'
     computeTarget: 'gpucluster'
-    pathFilter: 'notebooks/ncf_movielens.ipynb'
+    pathFilter: 'notebooks/*.ipynb'
     condaDependencies: 'scripts/reco_full.yaml'
     commonFiles: 'notebooks/reco_utils'
     dockerBaseImage: 'mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda9.0-cudnn7-ubuntu16.04'
