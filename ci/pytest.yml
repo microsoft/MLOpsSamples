@@ -32,6 +32,7 @@ steps:
   displayName: 'Login to Azure'
 
 - script: |
+   ls .
    sed -i 's#"subscription_id": "<>"#"subscription_id": "$(SubscriptionID)"#g' ./tests/ci/config.json
    echo my subscription is $(SubscriptionID)
    cat ./tests/ci/config.json
