@@ -83,10 +83,3 @@ steps:
     testResultsFiles: '**/test-*.xml'
     failTaskOnFailedTests: true
   condition: succeededOrFailed()
-=======
-- task: CmdLine@2
-  inputs:
-    script: 'echo words
-      
-      echo Use the environment variables input below to pass secret variables to this script'
->>>>>>> 33c39ccc39658f6e714a18587fe0ac7bf284a28c
