@@ -1,0 +1,31 @@
+# Validate notebooks in repo
+
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.6'
+  inputs:
+    versionSpec: 3.6
+
+- task: RunNotebook@0
+  inputs:
+    azureSubscription: 'emcmanu_test'
+    targetType: 'custom'
+    computeTarget: 'gpucluster'
+    pathFilter: 'notebooks/*.ipynb'
+    condaDependencies: 'scripts/reco_full.yaml'
+    commonFiles: 'notebooks/reco_utils'
+    dockerBaseImage: 'mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda9.0-cudnn7-ubuntu16.04'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: devops-for-ai'
+  inputs:
+    ArtifactName: 'devops-for-ai'
+    publishLocation: 'container'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    TargetPath: '$(Build.ArtifactStagingDirectory)'
