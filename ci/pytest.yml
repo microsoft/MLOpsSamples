@@ -1,0 +1,5 @@
+- task: CmdLine@2
+  inputs:
+    script: 'echo words
+      
+      echo Use the environment variables input below to pass secret variables to this script'
